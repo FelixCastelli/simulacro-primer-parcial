@@ -1,0 +1,24 @@
+<div class="card">
+    <div style="margin-left: 10px;">
+        <table>
+            <tbody id="table_actor">
+                <tr>
+                    <td>Bandera:</td>
+                    <td>@if (pais) {<img src="{{pais.flags.png}}" width="50" height="50" >}</td>
+                </tr>
+                <tr>
+                    <td>Población:</td>
+                    <td>@if (pais) { {{pais.population}} }</td>
+                </tr>
+                <tr>
+                    <td>Region:</td>
+                    <td>@if (pais) { {{pais.region}} }</td>
+                </tr>
+                <tr>
+                    <td>Maps:</td>
+                    <td>@if (pais) {<a href="{{pais.maps.googleMaps}}">Ver</a> }</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

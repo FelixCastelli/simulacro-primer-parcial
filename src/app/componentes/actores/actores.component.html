@@ -1,0 +1,18 @@
+<div class="actores">
+    <h1 class="titulo">Actores</h1>
+
+    <div class="linea-horizontal"></div>
+        
+    <div class="listado-actores">
+        <app-listado-actores [actores]="actores" (detallePelicula)="recibirDetalleActor($event)"></app-listado-actores>
+        <div class="detalle-actor">
+            <app-detalle-actor [actor]="detalleActor"></app-detalle-actor>
+        </div>
+        <div class="detalle-pais">
+            <app-detalle-pais [obtenerActor]="detalleActor"></app-detalle-pais>
+        </div>
+        <div class="peliculas-actor">
+            <app-peliculas-actor [obtenerActor]="detalleActor"></app-peliculas-actor>
+        </div>
+    </div>
+</div>

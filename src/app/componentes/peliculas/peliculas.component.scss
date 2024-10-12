@@ -1,0 +1,37 @@
+.pelicula {
+    display: block;
+}
+
+.titulo {
+    text-align: left;
+    margin-left: 20%;
+    font-family: 'Inter', sans-serif;
+}
+
+.linea-horizontal {
+    width: 60%;
+    height: 2px;
+    background-color: rgb(97, 97, 97);
+    margin-top: 5px;
+    margin-left: 20%;
+}
+
+.tabla-pelicula {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    width: 60%;
+    height: 50%;
+    margin-top: 1%;
+    right: 50%;
+    font-family: 'Inter', sans-serif;
+}
+
+.detalle-pelicula {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    top: 105%;
+    width: 100%;
+    height: 200px;
+}

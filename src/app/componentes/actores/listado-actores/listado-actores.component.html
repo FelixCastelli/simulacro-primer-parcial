@@ -1,0 +1,7 @@
+<div class="card-fondo">
+    @for (actor of actores; track $index) {
+        <div class="card" (click)="seleccionarActor($index)" >
+            <p>{{actores[$index].nombre}} {{actores[$index].apellido}}</p>                
+        </div>
+    }
+</div>

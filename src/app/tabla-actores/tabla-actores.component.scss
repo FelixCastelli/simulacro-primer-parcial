@@ -1,0 +1,21 @@
+.custom-select {
+    width: 50vh; /* Ancho del select igual que los inputs */
+    padding: 10px; /* Espacio interno */
+    border: 1px solid #ccc; /* Borde del select */
+    border-radius: 5px; /* Bordes redondeados */
+    background-color: #f5f5f5; /* Color de fondo */
+    font-size: 1rem; /* Tamaño de fuente */
+    outline: none; /* Eliminar el contorno predeterminado */
+    appearance: none; /* Quitar el estilo predeterminado del navegador */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"><polygon points="0,3 5,8 10,3" fill="%23333"/></svg>'); /* Icono de flecha hacia abajo */
+    background-repeat: no-repeat; /* Evitar repetición de la imagen */
+    background-position: right 10px center; /* Posicionar el icono de la flecha */
+    background-size: 10px; /* Tamaño de la flecha */
+    cursor: pointer; /* Cambiar cursor al pasar sobre el select */
+    margin-right: 200px;
+
+    &:focus {
+        border-color: #007bff; /* Cambiar el borde al enfocar */
+        background-color: #ffffff; /* Cambiar el fondo al enfocar */
+    }
+}

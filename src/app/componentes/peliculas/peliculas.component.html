@@ -1,0 +1,12 @@
+<div class="pelicula">
+    <h1 class="titulo">Peliculas</h1>
+        
+    <div class="linea-horizontal"></div> <!-- Línea horizontal -->
+
+    <div class="tabla-pelicula">
+        <app-tabla-peliculas [peliculas]="pelicula" (detallePelicula)="obtenerDetallePelicula($event)"></app-tabla-peliculas>
+        <div class="detalle-pelicula">
+            <app-detalle-peliculas [obtenerDetallePelicula]="detallePelicula"></app-detalle-peliculas>
+        </div>
+    </div>
+</div>

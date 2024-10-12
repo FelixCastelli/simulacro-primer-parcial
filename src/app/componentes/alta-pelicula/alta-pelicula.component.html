@@ -1,0 +1,73 @@
+<div class="form">
+    <form action="" [formGroup]="formGroup" (ngSubmit)="altaPelicula()">
+        <div class="form_group">
+            <label class="input-label">Nombre</label>
+            <input class="form-control custom-input"
+                   [ngClass]="{'input-error': formGroup.controls['nombre'].errors && formGroup.controls['nombre'].touched}"
+                   formControlName="nombre" name="nombre">
+            <div *ngIf="formGroup.controls['nombre'].errors && formGroup.controls['nombre'].touched">
+                <p *ngIf="formGroup.controls['nombre'].errors['required']" class="error-message">*Campo obligatorio</p>
+                <p *ngIf="formGroup.controls['nombre'].errors['minlength']" class="error-message">Mínimo 2 caracteres</p>
+            </div>
+
+            <label class="input-label">Tipo</label>
+            <select class="form-control custom-input"
+                    [ngClass]="{'input-error': formGroup.controls['tipo'].errors && formGroup.controls['tipo'].touched}"
+                    formControlName="tipo" name="tipo">
+                <option value="0">Tipo</option>
+                <option value="Acción">Acción</option>
+                <option value="Amor">Amor</option>
+                <option value="Ciencia Ficción">Ciencia Ficción</option>
+                <option value="Comedia">Comedia</option>
+                <option value="Drama">Drama</option>
+                <option value="Fantasía">Fantasía</option>
+                <option value="Terror">Terror</option>
+            </select>
+            <div *ngIf="formGroup.controls['tipo'].errors && formGroup.controls['tipo'].touched">
+                <p *ngIf="formGroup.controls['tipo'].errors['required']" class="error-message">*Campo obligatorio</p>
+            </div>
+
+            <label class="input-label">Fecha de Estreno</label>
+            <input class="form-control custom-input"
+                   [ngClass]="{'input-error': formGroup.controls['fechaEstreno'].errors && formGroup.controls['fechaEstreno'].touched}"
+                   formControlName="fechaEstreno" name="fechaEstreno" type="date">
+            <div *ngIf="formGroup.controls['fechaEstreno'].errors && formGroup.controls['fechaEstreno'].touched">
+                <p *ngIf="formGroup.controls['fechaEstreno'].errors['required']" class="error-message">*Campo obligatorio</p>
+            </div>
+
+            <label class="input-label">Cantidad de público</label>
+            <input class="form-control custom-input"
+                   [ngClass]="{'input-error': formGroup.controls['cantidadPublico'].errors && formGroup.controls['cantidadPublico'].touched}"
+                   formControlName="cantidadPublico" name="cantidadPublico">
+            <div *ngIf="formGroup.controls['cantidadPublico'].errors && formGroup.controls['cantidadPublico'].touched">
+                <p *ngIf="formGroup.controls['cantidadPublico'].errors['required']" class="error-message">*Campo obligatorio</p>
+                <p *ngIf="formGroup.controls['cantidadPublico'].errors['minlength']" class="error-message">Mínimo 1 número</p>
+                <p *ngIf="formGroup.controls['cantidadPublico'].errors['pattern']" class="error-message">Solo números</p>
+            </div>
+
+            <label class="input-label">Protagonista</label>
+            <input class="form-control custom-input"
+                   [ngClass]="{'input-error': formGroup.controls['protagonista'].errors && formGroup.controls['protagonista'].touched}"
+                   formControlName="protagonista" name="protagonista" readonly>
+            <div *ngIf="formGroup.controls['protagonista'].errors && formGroup.controls['protagonista'].touched">
+                <p *ngIf="formGroup.controls['protagonista'].errors['required']" class="error-message">*Campo obligatorio</p>
+                <p *ngIf="formGroup.controls['protagonista'].errors['minlength']" class="error-message">Mínimo 2 caracteres</p>
+                <p *ngIf="formGroup.controls['protagonista'].errors['pattern']" class="error-message">Solo letras</p>
+            </div>
+
+            <label class="input-label">Foto</label>
+            <input class="form-control custom-input"
+                   [ngClass]="{'input-error': formGroup.controls['foto'].errors && formGroup.controls['foto'].touched}"
+                   formControlName="foto" name="foto" type="url" placeholder="URL de la imagen">
+            <div *ngIf="formGroup.controls['foto'].errors && formGroup.controls['foto'].touched">
+                <p *ngIf="formGroup.controls['foto'].errors['required']" class="error-message">*Campo obligatorio</p>
+                <p *ngIf="formGroup.controls['foto'].errors['pattern']" class="error-message">URL inválido</p>
+            </div>
+
+            <button type="submit" class="btn" style="margin-top: 10px;">Subir</button>
+        </div>
+    </form>
+    <div class="actores">
+        <app-tabla-actores (actor)="obtenerActor($event)"></app-tabla-actores>
+    </div>
+</div>

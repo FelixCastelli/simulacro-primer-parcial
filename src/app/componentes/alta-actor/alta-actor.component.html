@@ -1,0 +1,60 @@
+<div class="form">
+    <form action="" [formGroup]="formGroup" (ngSubmit)="altaActor()">
+        <div class="form_group">
+            <label class="input-label">Nombre</label>
+            <input class="form-control custom-input"
+                   [ngClass]="{'input-error': formGroup.controls['nombre'].errors && formGroup.controls['nombre'].touched}"
+                   formControlName="nombre" name="nombre">
+            <div *ngIf="formGroup.controls['nombre'].errors && formGroup.controls['nombre'].touched">
+                <p *ngIf="formGroup.controls['nombre'].errors['required']" class="error-message">*Campo obligatorio</p>
+                <p *ngIf="formGroup.controls['nombre'].errors['minlength']" class="error-message">Mínimo 2 caracteres</p>
+                <p *ngIf="formGroup.controls['nombre'].errors['pattern']" class="error-message">Solo letras</p>
+            </div>
+
+            <label class="input-label">Apellido</label>
+            <input class="form-control custom-input"
+                   [ngClass]="{'input-error': formGroup.controls['apellido'].errors && formGroup.controls['apellido'].touched}"
+                   formControlName="apellido" name="apellido">
+            <div *ngIf="formGroup.controls['apellido'].errors && formGroup.controls['apellido'].touched">
+                <p *ngIf="formGroup.controls['apellido'].errors['required']" class="error-message">*Campo obligatorio</p>
+                <p *ngIf="formGroup.controls['apellido'].errors['minlength']" class="error-message">Mínimo 2 caracteres</p>
+                <p *ngIf="formGroup.controls['apellido'].errors['pattern']" class="error-message">Solo letras</p>
+            </div>
+
+            <label class="input-label">DNI</label>
+            <input class="form-control custom-input"
+                   [ngClass]="{'input-error': formGroup.controls['dni'].errors && formGroup.controls['dni'].touched}"
+                   formControlName="dni" name="dni">
+            <div *ngIf="formGroup.controls['dni'].errors && formGroup.controls['dni'].touched">
+                <p *ngIf="formGroup.controls['dni'].errors['required']" class="error-message">*Campo obligatorio</p>
+                <p *ngIf="formGroup.controls['dni'].errors['minlength']" class="error-message">Mínimo 7 numeros</p>
+                <p *ngIf="formGroup.controls['dni'].errors['maxlength']" class="error-message">Máximo 8 números</p>
+                <p *ngIf="formGroup.controls['dni'].errors['pattern']" class="error-message">Solo números</p>
+            </div>
+
+            <label class="input-label">Edad</label>
+            <input class="form-control custom-input"
+                   [ngClass]="{'input-error': formGroup.controls['edad'].errors && formGroup.controls['edad'].touched}"
+                   formControlName="edad" name="edad">
+            <div *ngIf="formGroup.controls['edad'].errors && formGroup.controls['edad'].touched">
+                <p *ngIf="formGroup.controls['edad'].errors['required']" class="error-message">*Campo obligatorio</p>
+                <p *ngIf="formGroup.controls['edad'].errors['minlength']" class="error-message">Mínimo 1 número</p>
+                <p *ngIf="formGroup.controls['edad'].errors['maxlength']" class="error-message">Máximo 2 números</p>
+                <p *ngIf="formGroup.controls['edad'].errors['pattern']" class="error-message">Solo números</p>
+            </div>
+
+            <label class="input-label">País</label>
+            <input class="form-control custom-input"
+                   [ngClass]="{'input-error': formGroup.controls['pais'].errors && formGroup.controls['pais'].touched}"
+                   formControlName="pais" name="pais" readonly>
+            <div *ngIf="formGroup.controls['pais'].errors && formGroup.controls['pais'].touched">
+                <p *ngIf="formGroup.controls['pais'].errors['required']" class="error-message">*Campo obligatorio</p>
+            </div>
+
+            <button type="submit" class="btn" style="margin-top: 10px;">Registrar</button>
+        </div>
+    </form>
+    <div class="paises">
+        <app-tabla-paises (pais)="obtenerPais($event)"></app-tabla-paises>
+    </div>
+</div>

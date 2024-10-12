@@ -1,0 +1,9 @@
+<div class="card-fondo">
+    @for (pelicula of peliculas; track $index) {
+        <img 
+            src="{{peliculas[$index].foto}}" 
+            (click)="seleccionarPelicula($index)" 
+            class="imagen"
+        >
+    }
+</div>
